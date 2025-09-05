@@ -1,0 +1,26 @@
+import Hero from '../components/sections/Hero';
+import Achievements from '../components/sections/Achievements';
+import EventsSectionHorizontal from '../components/sections/EventsSectionHorizontal';
+import TeamSectionHorizontal from '../components/sections/TeamSectionHorizontal';
+import PhotoGallery from '../components/PhotoGallery';
+
+const Home = () => {
+  return (
+    <div className="min-h-screen">
+      <Hero />
+      <Achievements />
+      
+      {/* Photo Gallery Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="container-custom">
+          <PhotoGallery />
+        </div>
+      </section>
+      
+      <EventsSectionHorizontal />
+      <TeamSectionHorizontal />
+    </div>
+  );
+};
+
+export default Home;

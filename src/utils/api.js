@@ -1,0 +1,50 @@
+import axios from 'axios';
+
+// Create axios instance with base configuration
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || 'https://csqaureclub-backend.onrender.com/api',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Request interceptor to add auth token
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('adminToken');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor for error handling
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    // Handle common error cases
+    if (error.response?.status === 401) {
+      // Unauthorized - remove token and redirect to login
+      localStorage.removeItem('adminToken');
+      // You could also trigger a redirect here if needed
+    }
+    
+    // Return a standardized error format
+    const customError = {
+      message: error.response?.data?.message || error.message || 'An error occurred',
+      status: error.response?.status,
+      data: error.response?.data,
+    };
+    
+    return Promise.reject(customError);
+  }
+);
+
+export default api;
