@@ -30,7 +30,7 @@ const Achievements = () => {
       icon: '🤝',
       title: 'Industry Partners',
       description: 'Collaborations with leading tech companies',
-      stats: '25+ Partners'
+      stats: '20+ Partners'
     },
     {
       icon: '💡',
