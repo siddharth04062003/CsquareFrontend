@@ -6,25 +6,25 @@ const Achievements = () => {
       icon: '🏆',
       title: 'Competition Winners',
       description: 'Multiple victories in cybersecurity and programming competitions',
-      stats: '15+ Awards'
+      stats: '5+ Awards'
     },
     {
       icon: '👥',
       title: 'Active Members',
       description: 'Growing community of passionate tech enthusiasts',
-      stats: '200+ Members'
+      stats: '400+ Members'
     },
     {
       icon: '🎯',
       title: 'Projects Completed',
       description: 'Real-world projects solving actual problems',
-      stats: '50+ Projects'
+      stats: '10+ Projects'
     },
     {
       icon: '🎓',
       title: 'Workshops Conducted',
       description: 'Educational sessions covering latest technologies',
-      stats: '100+ Sessions'
+      stats: '30+ Sessions'
     },
     {
       icon: '🤝',
